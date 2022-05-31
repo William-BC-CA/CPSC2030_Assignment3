@@ -25,6 +25,22 @@ function addData(obj) {
   updateDOM();
 }
 
+function doubleMoney(){
+  // providedData.forEach( item => {
+  //   item.money *= 2;
+  //   console.log(item.money);
+  // })
+  // for (let i = 0; providedData === null; i++){
+  //   item.money *= 2;
+  //   console.log(item.money);
+  // }
+  data.map(person => {person.money *= 2});
+  //console.log(toMap);
+  //data = toMap;
+  // while (
+  updateDOM();
+}
+
 function updateDOM(providedData = data) {
   // Clearing the main element
   main.innerHTML = '<h2><strong>Person</strong> Wealth</h2>';
@@ -42,3 +58,4 @@ function formatMoney(number) {
 
 // Event listeners
 addUserBtn.addEventListener('click', getRandomUser);
+doubleBtn.addEventListener('click', doubleMoney);
