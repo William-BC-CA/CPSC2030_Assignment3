@@ -26,6 +26,7 @@ function addData(obj) {
 }
 
 function doubleMoney(){
+  // TODO: Clean up unusued code!
   // providedData.forEach( item => {
   //   item.money *= 2;
   //   console.log(item.money);
