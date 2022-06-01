@@ -26,7 +26,7 @@ function addData(obj) {
 }
 
 function doubleMoney(){
-  // TODO: Clean up unusued code!
+  // TODO: Clean up unused code!
   // providedData.forEach( item => {
   //   item.money *= 2;
   //   console.log(item.money);
@@ -39,6 +39,15 @@ function doubleMoney(){
   //console.log(toMap);
   //data = toMap;
   // while (
+  updateDOM();
+}
+
+// Useful source: https://www.javascripttutorial.net/array/javascript-sort-an-array-of-objects/
+function sortByRichest(){
+  data.sort(function(a, b){
+    return b.money - a.money
+  });
+  console.log(data);
   updateDOM();
 }
 
@@ -60,3 +69,4 @@ function formatMoney(number) {
 // Event listeners
 addUserBtn.addEventListener('click', getRandomUser);
 doubleBtn.addEventListener('click', doubleMoney);
+sortBtn.addEventListener('click', sortByRichest);
