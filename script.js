@@ -51,6 +51,21 @@ function sortByRichest(){
   updateDOM();
 }
 
+function showMillionaires(){
+  // TODO: CLEAN UP!
+  // data = data.filter(checkMillionaire);
+  const elites = data.filter(data => {
+    return data.money > 1000000;
+  });
+  data = elites;
+  console.log(data);
+  updateDOM();
+}
+
+// function checkMillionaire(){
+//   return data.money > 1000000;
+// }
+
 function updateDOM(providedData = data) {
   // Clearing the main element
   main.innerHTML = '<h2><strong>Person</strong> Wealth</h2>';
@@ -70,3 +85,4 @@ function formatMoney(number) {
 addUserBtn.addEventListener('click', getRandomUser);
 doubleBtn.addEventListener('click', doubleMoney);
 sortBtn.addEventListener('click', sortByRichest);
+showMillionairesBtn.addEventListener('click', showMillionaires);
