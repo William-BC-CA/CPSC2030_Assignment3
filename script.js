@@ -51,6 +51,7 @@ function sortByRichest(){
   updateDOM();
 }
 
+/* Useful Source: https://bobbyhadz.com/blog/javascript-filter-array-of-objects-based-on-property */
 function showMillionaires(){
   // TODO: CLEAN UP!
   // data = data.filter(checkMillionaire);
@@ -81,8 +82,28 @@ function formatMoney(number) {
   return '$' + number;
 }
 
+// Useful Source: https://stackoverflow.com/questions/5732043/how-to-call-reduce-on-an-array-of-objects-to-sum-their-properties
+function calculateWealth(){
+  // const toReduce = (accumulator, currentValue) => {accumulator.money + currentValue.money};
+  // const toReduce = (function(a, b){
+  //   return {money: a.money + b.money};
+  // });
+  const total = data.reduce((a, b) => ({money: a.money + b.money}));
+  console.log(total);
+  const plus = document.createElement('div');
+  // plus.setAttribute('money', 'div');
+  // plus.classList.add('button');
+  plus.innerHTML = `<h3><strong>Total wealth:</strong> ${formatMoney(total.money)}</h3>`;
+  main.appendChild(plus);
+}
+
+// function getSum(num){
+//   num += data.money;
+// }
+
 // Event listeners
 addUserBtn.addEventListener('click', getRandomUser);
 doubleBtn.addEventListener('click', doubleMoney);
 sortBtn.addEventListener('click', sortByRichest);
 showMillionairesBtn.addEventListener('click', showMillionaires);
+calcBtn.addEventListener('click', calculateWealth);
