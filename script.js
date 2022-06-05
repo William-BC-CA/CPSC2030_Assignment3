@@ -33,7 +33,6 @@ function sortByRichest(){
   data.sort(function(a, b){
     return b.money - a.money
   });
-  console.log(data);
   updateDOM();
 }
 
@@ -43,7 +42,6 @@ function showMillionaires(){
     return data.money > 1000000;
   });
   data = elites;
-  console.log(data);
   updateDOM();
 }
 function updateDOM(providedData = data) {
@@ -64,7 +62,6 @@ function formatMoney(number) {
 // Useful Source: https://stackoverflow.com/questions/5732043/how-to-call-reduce-on-an-array-of-objects-to-sum-their-properties
 function calculateWealth(){
   const total = data.reduce((a, b) => ({money: a.money + b.money}));
-  console.log(total);
   const plus = document.createElement('div');
   plus.innerHTML = `<h3><strong>Total wealth:</strong> ${formatMoney(total.money)}</h3>`;
   main.appendChild(plus);
